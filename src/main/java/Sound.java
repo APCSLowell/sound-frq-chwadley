@@ -39,7 +39,8 @@ public class Sound
     int i=0;
     while (samples[i]==0) {t++;}
     int[] a = new int[samples.length-t];
-    Arrays.setAll(a,i->samples[i-t]);
+    for (int i=0;i<a.length;i++) {
+      a[i] = samples[i-t];
     samples = a;
   }
 }
